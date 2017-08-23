@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Player } from '../../shared/players/player';
+
+import {RestApiService} from '../../shared/restapi.service';
+
 @Component({
   selector: 'app-player-list',
   templateUrl: './player-list.component.html',
@@ -7,9 +11,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayerListComponent implements OnInit {
 
-  constructor() { }
+  listOfPlayers:Player[];
 
-  ngOnInit() {
+  constructor(private apiService:RestApiService){
+
   }
 
+  ngOnInit() {
+    this.listOfPlayers=this.apiService.getListOfPlayers();
+  }
 }

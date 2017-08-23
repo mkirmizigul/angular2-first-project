@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { TeamListComponent } from './team-list/team-list.component';
 
 const routes: Routes = [
-  { path: 'teams', component: TeamListComponent },
+  { path: '', component: TeamListComponent },
 ];
 
 @NgModule({

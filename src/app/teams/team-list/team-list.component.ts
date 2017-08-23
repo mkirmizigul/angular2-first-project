@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Team } from '../../shared/teams/team';
+
+import {RestApiService} from '../../shared/restapi.service';
+
+
 @Component({
   selector: 'app-team-list',
   templateUrl: './team-list.component.html',
@@ -7,9 +12,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamListComponent implements OnInit {
 
-  constructor() { }
+  listOfTeams: Team[];
+
+  constructor(private apiService:RestApiService){
+
+  }
 
   ngOnInit() {
+    this.listOfTeams=this.apiService.getListOfTeams();
   }
 
 }
