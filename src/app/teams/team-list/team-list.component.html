@@ -1,5 +1,6 @@
 <h2>Teams</h2>
-  <table>
+<table class="table table-striped table-hover">
+    <thead>
     <tr>
       <th>Team Name</th>
       <th>Wins</th>
@@ -7,6 +8,8 @@
       <th>Winning %</th>
       <th>Games Behind</th>
     </tr>
+  </thead>
+  <tbody>
     <tr *ngFor="let team of listOfTeams">
       <td>{{team.teamName}}</td>
       <td>{{team.numberOfWins}}</td>
@@ -14,4 +17,6 @@
       <td>{{team.winPercentage}}</td>
       <td>{{team.gamesBehind}}</td>
     </tr>
+  </tbody>
   </table>
+  

@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { PlayerListComponent } from './player-list/player-list.component';
 
 const routes: Routes = [
-  { path: 'players', component: PlayerListComponent },
+  { path: '', component: PlayerListComponent },
 ];
 
 @NgModule({

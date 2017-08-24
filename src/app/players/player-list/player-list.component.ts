@@ -13,8 +13,14 @@ export class PlayerListComponent implements OnInit {
 
   listOfPlayers:Player[];
 
-  constructor(private apiService:RestApiService){
+  selectedPlayer:Player;
 
+  constructor(private apiService:RestApiService){
+    
+  }
+
+  setSelectedPlayer(selectedPlayer:Player){
+    this.selectedPlayer=selectedPlayer;
   }
 
   ngOnInit() {

@@ -1,0 +1,7 @@
+<nav class="navbar navbar-dark bg-inverse">
+  <ul class="nav navbar-nav">
+    <li class="nav-item" [class.active]="isActive('/')" ><a routerLink="/" class="nav-link">Home</a></li>
+    <li class="nav-item" [class.active]="isActive('/players')" ><a routerLink="/players" class="nav-link">Players</a></li>
+    <li class="nav-item" [class.active]="isActive('/teams')" ><a routerLink="/teams" class="nav-link">Teams</a></li>
+  </ul>
+</nav>
