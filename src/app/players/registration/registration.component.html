@@ -1,0 +1,115 @@
+<h2>Register</h2>
+{{registrationViewModel.position}}<br/>
+{{registrationViewModel.weight}}<br/>
+{{registrationViewModel.injuries}}<br/>
+{{registrationViewModel.password}}<br/>
+<form>
+  <div class="form-group">
+    <label for="firstName">First Name</label>
+    <input type="text" class="form-control" id="firstName" name="firstName" [(ngModel)]="registrationViewModel.firstName" placeholder="Enter First Name" />
+  </div>
+  <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name" name="lastName" [(ngModel)]="registrationViewModel.lastName" />
+  </div>
+  <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter Email" [(ngModel)]="registrationViewModel.email" name="Email" />
+  </div>
+  <div class="form-group">
+          <label for="bio">Biography</label>
+          <textarea type="email" class="form-control" rows="5" id="bio" placeholder="Enter bio" [(ngModel)]="registrationViewModel.biography" name="biography"></textarea>
+  </div>
+  <div class="form-group">
+      <label for="dob">DOB</label>
+      <input type="date" class="form-control" id="dob" placeholder="Enter dob" [(ngModel)]="registrationViewModel.dob" name="dob" />
+  </div>
+  <div class="form-group">
+      <label for="teamId">Team</label>
+      <select name="" id="teamId" class="form-control" [(ngModel)]="registrationViewModel.teamIdJoined" name="teamIdJoined" >
+        <option value="">Please Select ...</option>
+        <option value="1">Atlanta Hawk</option>
+        <option value="2">Boston Celtics</option>
+        <option value="3">Charlotte Hornets</option>
+        <option value="4">Chicago Bulls</option>
+        <option value="5">Cleveland Cavaliers</option>
+      </select>
+  </div>
+  <div class="form-group">
+      <label for="heightInFeet">Height</label>
+      <div class="row">
+        <div class="col-xs-4 col-sm-2">
+            <input type="number" class="form-control" id="heightInFeet" placeholder="Enter in feet" [(ngModel)]="registrationViewModel.heightInFeet" name="heightInFeet" />
+        </div>
+        <div class="col-xs-1 height-label">feet</div>
+        <div class="col-xs-4 col-sm-2">
+            <input type="number" class="form-control" id="heightInInches" placeholder="Enter in Inches" [(ngModel)]="registrationViewModel.heigthInInches" name="heigthInInches" />
+        </div>
+        <div class="col-xs-1 height-label">Inches</div>
+      </div>
+  </div>
+  <div class="form-group">
+      <label for="weight">Weight</label>
+      <div class="row">
+        <div class="col-xs-4 col-sm-2">
+            <input type="number" class="form-control" id="weight" placeholder="Enter in pounds" [(ngModel)]="registrationViewModel.weight" name="weight" />
+        </div>
+        <div class="col-xs-1 weight-label">lbs</div>
+      </div>
+  </div>
+  <div class="form-group">
+    <label for="pointGuard">Position</label>
+    <div class="form-check-inline">
+      <label class="from-check-label">
+        <input type="radio" class="form-check-input" name="position" id="pointGuard" value="PointGuard" [(ngModel)]="registrationViewModel.position" />
+        Point Guard
+      </label>
+    
+    
+        <label class="from-check-label">
+          <input type="radio" class="form-check-input" name="position" id="shootingGuard" value="ShootingGuard" [(ngModel)]="registrationViewModel.position" />
+          Shooting Guard
+        </label>
+    
+    
+          <label class="from-check-label">
+            <input type="radio" class="form-check-input" name="position" id="smallForward" value="SmallForward" [(ngModel)]="registrationViewModel.position" />
+            Small Forward
+          </label>
+        
+    
+            <label class="from-check-label">
+              <input type="radio" class="form-check-input" name="position" id="powerForward" value="PowerForward" [(ngModel)]="registrationViewModel.position" />
+              Power Forward
+            </label>
+        
+    
+              <label class="from-check-label">
+                <input type="radio" class="form-check-input" name="position" id="center" value="Center" [(ngModel)]="registrationViewModel.position" />
+                center
+              </label>
+            </div>
+  </div>
+  <div class="form-group">
+    <label for="brokenFoot">Past Injuries</label>
+    <div>
+      <label class="from-check-inline">
+        <input type="checkbox" class="form-check-input" id="brokenFoot" value="Broken Foot" [(ngModel)]="registrationViewModel.position" name="brokenFoot" (change)="addOrRemoveInjury($event.target.value)" />
+        Broken Foot
+      </label>
+        <label class="from-check-inline">
+          <input type="checkbox" class="form-check-input" id="kneeInjury" value="Knee Injury" name="kneeInjury" (change)="addOrRemoveInjury($event.target.value)" />
+          Knee Injury
+        </label>
+          <label class="from-check-inline">
+            <input type="checkbox" class="form-check-input" id="ankleInjury" value="Ankle Injury" name="ankleInjury" (change)="addOrRemoveInjury($event.target.value)" />
+            Ankle Injury
+          </label>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Enter password" value="password" [(ngModel)]="registrationViewModel.password" />
+    </div>
+    <button class="btn btn-default btn-primary pull-right">Kaydet</button>
+  </div>
+</form>
